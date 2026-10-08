@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serve | FAOGP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-logo">
+            <a href="index.html">
+                <img src="5.png" alt="FAOGP Home" class="nav-logo-img">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="groups.html">Groups</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="serve.html">Serve</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        
+        <!-- 1. SERVE HERO SECTION (Using your requested Photo 1.jpg!) -->
+        <header class="hero serve-hero fade-in-section" style="background-image: url('Photo 1.jpg');">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+            </div>
+        </header>
+
+        <!-- 2. INTRO SECTION -->
+        <section class="welcome-section">
+            <h2 class="section-title centered fade-in-section">
+                Use your gifts to build the Kingdom.
+            </h2>
+            <p class="section-paragraph centered fade-in-section delay-1">
+                God has given each of us unique gifts and talents. At FAOGP, we believe that serving is one of the best ways to discover your purpose, grow in your faith, and build authentic relationships with others. There is a place for you on the team!
+            </p>
+        </section>
+
+        <!-- 3. THE SERVE TEAMS GRID (2-Column Layout) -->
+        <section class="get-involved-section">
+            <div class="two-col-grid">
+                
+                <!-- Team 1: Guest Experience -->
+                <div class="card fade-in-section delay-1">
+                    <img src="Photo 2.jpg" alt="Guest Experience" class="card-img">
+                    <div class="card-content">
+                        <div class="card-text">
+                            <h3>Guest Experience</h3>
+                            <p>Greeters, ushers, and connection center. Be the first welcoming smile someone sees on a Sunday.</p>
+                        </div>
+                        <a href="https://forms.gle/QPZ3KzXB9sNrLtyP7" target="_blank" class="pill-btn">Join This Team</a>
+                    </div>
+                </div>
+
+                <!-- Team 2: Worship & Production -->
+                <div class="card fade-in-section delay-2">
+                    <img src="Photo 3.jpg" alt="Worship and Tech" class="card-img">
+                    <div class="card-content">
+                        <div class="card-text">
+                            <h3>Worship & Production</h3>
+                            <p>Vocals, band, sound, and media. Help create an atmosphere where people can encounter God.</p>
+                        </div>
+                        <a href="https://forms.gle/QPZ3KzXB9sNrLtyP7" target="_blank" class="pill-btn">Join This Team</a>
+                    </div>
+                </div>
+
+                <!-- Team 3: Kids Ministry -->
+                <div class="card fade-in-section delay-3">
+                    <img src="Photo 7.png" alt="Kids Ministry" class="card-img">
+                    <div class="card-content">
+                        <div class="card-text">
+                            <h3>Kids Ministry</h3>
+                            <p>Investing in the next generation through teaching, games, and safe, loving care.</p>
+                        </div>
+                        <a href="https://forms.gle/QPZ3KzXB9sNrLtyP7" target="_blank" class="pill-btn">Join This Team</a>
+                    </div>
+                </div>
+
+                <!-- Team 4: Community Outreach -->
+                <div class="card fade-in-section delay-4">
+                    <img src="Photo 6.png" alt="Outreach" class="card-img">
+                    <div class="card-content">
+                        <div class="card-text">
+                            <h3>Community Outreach</h3>
+                            <p>Taking the love of Jesus into the streets of Iligan City through local missions and outreach programs.</p>
+                        </div>
+                        <a href="https://forms.gle/QPZ3KzXB9sNrLtyP7" target="_blank" class="pill-btn">Join This Team</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <div class="footer-icons left-icons">
+                <img src="9.png" alt="" class="footer-img">
+                <img src="10.png" alt="" class="footer-img">
+            </div>
+            <ul class="footer-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="groups.html">Groups</a></li>
+                <li><a href="serve.html">Serve</a></li>
+            </ul>
+            <div class="footer-icons right-icons">
+                <a href="https://www.facebook.com/YOUR-CHURCH-PAGE" target="_blank">
+                    <img src="12.png" alt="Facebook" class="footer-img">
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- SCROLL DETECTION SCRIPT -->
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.fade-in-section').forEach((section) => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
